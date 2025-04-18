@@ -49,12 +49,12 @@ test('auto waiting - custom wait locator assertion', async ({ page }) => {
 
   await page.getByRole('button', { name: 'Button Triggering AJAX Request' }).click();
 
-  await expect(page.locator('.bg-success')).toHaveText('Data loaded with AJAX get request.');
-  // await expect(page.locator('.bg-success')).toHaveText('Data loaded with AJAX get request.', {timeout: 20000});
+  // await expect(page.locator('.bg-success')).toHaveText('Data loaded with AJAX get request.');
+  await expect(page.locator('.bg-success')).toHaveText('Data loaded with AJAX get request.', {timeout: 20000});
 });
 
 test('timeout', async ({ page }) => {
-  // test.setTimeout(4000);
+  // test.setTimeout(400000);
   // test.slow();
 
 });

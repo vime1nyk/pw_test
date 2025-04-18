@@ -13,7 +13,7 @@ import { defineConfig, devices } from '@playwright/test';
  */
 export default defineConfig({
   // globalTimeout: 60000, //for all tests
-  // timeout: 30000, //for each test
+  // timeout: 40000, //for each test
 
   // expect: { //for locator assertions
   //   timeout: 20000
