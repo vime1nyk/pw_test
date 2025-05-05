@@ -82,6 +82,35 @@ test('checkbox/radio', async ({page}) => {
     
 });
 
+test('dialog box', async ({page}) => {
+    await page.goto('https://testpages.herokuapp.com/styled/alerts/alert-test.html');
+
+    page.on('dialog', dialog => {
+        dialog.accept();
+    });
+
+    await page.getByRole('button', {name: 'Show confirm box'}).click()
+
+    await page.waitForTimeout(1000);
+
+    await page.waitForTimeout(1000);
+
+});
+
+test('iframe', async ({page}) => {
+    await page.goto('https://huckleberrycare.com/gift-card');
+
+    const frame = page.frameLocator(`.gift-up-target iframe`);
+
+    const premiumBox = frame.locator('.item-group', {hasText: 'Huckleberry Premium'});
+
+    await premiumBox.scrollIntoViewIfNeeded();
+
+    await page.waitForTimeout(1000);
+
+    await premiumBox.locator('svg').click();
+});
+
 
 test.afterEach( async ({page}) => {
     await page.waitForTimeout(3000);

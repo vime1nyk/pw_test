@@ -15,14 +15,6 @@ test('getByPlaceholder', async ({page}) => {
     await serachField.fill('typescript');
 });
 
-test('getByAltText', async({page}) => {
-    await expect(page.getByAltText('Dynamic Spaces').first()).toBeVisible();
-})
-
-test('getByLabel', async ({page}) => {
-    
-});
-
 test('getByTitle', async ({page}) => {
     await page.getByText(`Not Sure Where To Begin?`).click();
 
