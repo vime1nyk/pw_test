@@ -1,10 +1,10 @@
 import { expect, test } from '@playwright/test'
-import data from '../test-files/test-data.json'
+// import data from '../test-files/test-data.json'
 
 test('mock api', async ({ page }) => {
     await page.route('https://www.ukr.net/ajax/start.json', async route => {
         await route.fulfill({
-            body: JSON.stringify(data)
+            // body: JSON.stringify(data)
         });
     });
 
@@ -14,7 +14,7 @@ test('mock api', async ({ page }) => {
 })
 
 test('perform request get', async ({ request }) => {
-    const response = await request.get('https://api.restful-api.dev/objects/7');
+    const response = await request.get(`${process.env.TEST_RESFUL_API_URL}/7`);
     const responseBody = await response.json();
 
     expect(response.status()).toBe(200);

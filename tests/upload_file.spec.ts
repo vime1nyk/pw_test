@@ -14,3 +14,7 @@ test('upload file', async ({page}) => {
     await page.setInputFiles('input[type="file"]', './test-files/maxwell-cat.gif')
     
 })
+
+test.afterEach(async ({page}) => {
+    await page.waitForTimeout(2000);
+});
