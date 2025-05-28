@@ -34,23 +34,25 @@ export default defineConfig({
   projects: [
     {
       name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      use: {
+        ...devices['Desktop Chrome'],
+        // storageState: '.auth/user.json'
+      },
+      // dependencies: ['setup']
     },
 
     {
       name: 'mobile',
       grep: /@mobile/,
-      use: { 
+      use: {
         baseURL: 'dev url',
         ...devices['iPhone 11']
       },
     },
 
     {
-      name: 'prod',
-      use: { 
-        baseURL: 'prod url'
-      },
+      name: 'setup',
+      testMatch: 'auth.setup.ts'
     },
   ]
 });
