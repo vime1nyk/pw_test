@@ -26,8 +26,8 @@ export default defineConfig({
   // reporter: 'line',
   // reporter: 'list',
   // reporter: [['json', {outputFile: 'test-results/results.json'}]],
-  reporter: [['html']],
-  // reporter: 'allure-playwright', //allure serve allure-results
+  // reporter: [['html']],
+  reporter: 'allure-playwright', //allure serve allure-results
 
   use: {
     actionTimeout: 20000, // for actions like click()
