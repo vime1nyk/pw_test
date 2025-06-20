@@ -19,9 +19,16 @@ export default defineConfig({
   testDir: './tests',
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
-  retries: process.env.CI ? 2 : 0,
+  retries: 0,
   workers: 5,
-  reporter: 'html',
+
+  // reporter: 'dot',
+  // reporter: 'line',
+  // reporter: 'list',
+  // reporter: [['json', {outputFile: 'test-results/results.json'}]],
+  reporter: [['html', {outputFolder: 'test-results'}]],
+  // reporter: 'allure-playwright', //allure serve allure-results
+
   use: {
     actionTimeout: 20000, // for actions like click()
     navigationTimeout: 20000, // for page navigation page.goto()
@@ -29,6 +36,8 @@ export default defineConfig({
     // baseURL: 'https://www.w3schools.com',
 
     trace: 'on-first-retry',
+    screenshot: 'only-on-failure',
+    video: 'on-first-retry'
   },
 
   projects: [

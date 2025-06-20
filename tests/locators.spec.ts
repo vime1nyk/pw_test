@@ -30,6 +30,8 @@ test('getByAltText', async ({page}) => {
     await colorPicker.scrollIntoViewIfNeeded();
 
     await colorPicker.click();
+
+    await expect(page.locator(".class")).toBeVisible({timeout: 5000});
 });
 
 test('getByRole', async ({page}) => {
