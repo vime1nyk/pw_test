@@ -26,7 +26,7 @@ export default defineConfig({
   // reporter: 'line',
   // reporter: 'list',
   // reporter: [['json', {outputFile: 'test-results/results.json'}]],
-  reporter: [['html', {outputFolder: 'test-results'}]],
+  reporter: [['html']],
   // reporter: 'allure-playwright', //allure serve allure-results
 
   use: {
