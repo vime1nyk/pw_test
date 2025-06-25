@@ -5,6 +5,7 @@ on:
   pull_request:
     branches: [ main, master ]
   #schedule:
+  # test
   #  - cron: '0 3 * * *' #minute hour day-of-month month day-of-week
 jobs:
   test:
