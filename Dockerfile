@@ -6,3 +6,7 @@ COPY . /app/
 
 RUN npm install --force
 RUN npx playwright install
+
+#docker build -t tag-name .
+#docker run -it tag name 
+#docker-compose up --build
